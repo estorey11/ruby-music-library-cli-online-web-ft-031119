@@ -1,5 +1,6 @@
 
 class MusicLibraryController
+  attr_accessor
   
   def initialize(path="./db/mp3s")
     importer=MusicImporter.new(path)
@@ -20,6 +21,10 @@ class MusicLibraryController
       puts "What would you like to do?"
       command=gets.strip
     end
+  end
+  
+  def song_list
+    Song.all.uniq.sort_by{|song| song.name}
   end
   
   def list_songs
@@ -74,7 +79,10 @@ class MusicLibraryController
   def play_song
     puts "Which song number would you like to play?"
     number=gets.strip
-    
+    if number<=self.song_list.size
+      song=self.song_list[number-1]
+      puts "Playing #{song.name} by #{song.artist.name}"
+    end
   end
   
 end
