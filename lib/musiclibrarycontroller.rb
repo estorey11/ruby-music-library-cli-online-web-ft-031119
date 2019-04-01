@@ -42,5 +42,16 @@ class MusicLibraryController
     
   end
   
+  def list_genres
+    list=[]
+    Genre.all.each{|genre|list << genre.name}
+    
+    list.uniq.sort.each_with_index{|genre, i|
+      line="#{i+1}. #{genre}"
+      puts line
+    }
+    
+  end
+  
 end
 
