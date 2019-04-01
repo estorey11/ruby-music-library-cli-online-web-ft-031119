@@ -21,7 +21,11 @@ class MusicLibraryController
       puts "What would you like to do?"
       command=gets.strip
       list_songs if command=="list songs"
-      list_songs if command=="list songs"
+      list_artists if command=="list artists"
+      list_genres if command=="list genres"
+      list_songs_by_artist if command=="list artist"
+      list_songs_by_genre if command=="list genre"
+      play_song if command=="play song"
     end
   end
   
