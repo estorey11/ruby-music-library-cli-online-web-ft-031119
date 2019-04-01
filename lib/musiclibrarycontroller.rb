@@ -39,7 +39,6 @@ class MusicLibraryController
       line="#{i+1}. #{artist}"
       puts line
     }
-    
   end
   
   def list_genres
@@ -50,6 +49,9 @@ class MusicLibraryController
       line="#{i+1}. #{genre}"
       puts line
     }
+  end
+  
+  def list_songs_by_artist
     
   end
   
