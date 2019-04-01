@@ -58,7 +58,7 @@ class MusicLibraryController
     if artist
       names=[]
       artist.songs.each{|song| names << song.name}
-      names.sort.each_with_index{|name, i| puts ""}
+      names.sort.each_with_index{|name, i| puts "#{i+1}. #{name}"}
     end
   end
   
