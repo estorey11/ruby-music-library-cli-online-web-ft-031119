@@ -71,5 +71,9 @@ class MusicLibraryController
     end
   end
   
+  def play_song
+    self.list_songs
+  end
+  
 end
 
