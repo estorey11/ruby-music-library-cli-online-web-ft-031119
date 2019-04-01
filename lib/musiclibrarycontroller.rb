@@ -32,10 +32,10 @@ class MusicLibraryController
   end
   
   def list_artists
-    artists=[]
-    Song.all.each{|song| artists << song.artist.name}
-    binding.pry
-    artists.uniq.sort.each_with_index{|artist, i|
+    list=[]
+    Artist.all.each{|artist|list << artist.name}
+    
+    list.uniq.sort.each_with_index{|artist, i|
       line="#{i+1}. #{artist}"
       puts line
     }
